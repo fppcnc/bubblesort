@@ -5,6 +5,7 @@ function bubbleSort(arr: number[]): number[] {
     //iterate every number in given array
     for (let i: number = 0; i < arr.length - 1; i++) {
         //inner loop doesn't need to access the greater numbers anymore because they are already sorted
+        //bigger numbers already bubbled up to the end
         for (let j: number = 0; j < arr.length - i - 1; j++) {
             //if following number is lesser than j, switch positions
             if (arr[j] > arr[j + 1]) {
@@ -14,6 +15,12 @@ function bubbleSort(arr: number[]): number[] {
                 arr[j] = arr[j + 1];
                 // greater number takes following position
                 arr[j + 1] = temp;
+
+                // is it also possible to swap values like it follows:
+
+                // [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+
+                // so we don't need the temp variable
             }
         }
     }
